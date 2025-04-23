@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
-public class Categoria {
+public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -12,7 +12,15 @@ public class Categoria {
 
     private String nome;
 
-    @OneToMany(mappedBy = "categoria")
+    @Column(unique = true)
+    private String email;
+
+    private String senha;
+
+    @Enumerated(EnumType.STRING)
+    private Perfil perfil;
+
+    @OneToMany(mappedBy = "usuario")
     private List<Chamado> chamados;
 
     // Getters e Setters abaixo, caso precise

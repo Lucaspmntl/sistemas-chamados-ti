@@ -1,7 +1,7 @@
-package com.seuprojeto.chamado.services;
+package com.seuprojeto.chamado.service;
 
 import com.seuprojeto.chamado.model.Categoria;
-import com.seuprojeto.chamado.repositories.CategoriaRepository;
+import com.seuprojeto.chamado.repository.CategoriaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,14 +9,15 @@ import java.util.List;
 
 @Service
 public class CategoriaService {
+
     @Autowired
     private CategoriaRepository categoriaRepository;
 
-    public List<Categoria> listarCategorias() {
+    public List<Categoria> listarTodas() {
         return categoriaRepository.findAll();
     }
 
-    public Categoria salvarCategoria(Categoria categoria) {
+    public Categoria salvar(Categoria categoria) {
         return categoriaRepository.save(categoria);
     }
 }
