@@ -23,5 +23,20 @@ public class Usuario {
     @OneToMany(mappedBy = "usuario")
     private List<Chamado> chamados;
 
-    // Getters e Setters abaixo, caso precise
+    // Getters e Setters
+    public String getEmail() {
+        return email;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public Perfil getPerfil() {
+        return perfil;
+    }
 }

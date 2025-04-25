@@ -3,6 +3,7 @@ package com.seuprojeto.chamado.service;
 import com.seuprojeto.chamado.model.Usuario;
 import com.seuprojeto.chamado.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -14,8 +15,17 @@ public class UsuarioService {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
-    public Usuario salvar(Usuario usuario) {
-        return usuarioRepository.save(usuario);
+    private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+
+    public void salvar(Usuario usuario) {
+        Optional<Usuario> existente = usuarioRepository.findByEmail(usuario.getEmail());
+        if (existente.isPresent()) {
+            throw new RuntimeException("Email já está em uso!");
+        }
+
+        String senhaCriptografada = passwordEncoder.encode(usuario.getSenha());
+        usuario.setSenha(senhaCriptografada);
+        usuarioRepository.save(usuario);
     }
 
     public Optional<Usuario> buscarPorId(Long id) {

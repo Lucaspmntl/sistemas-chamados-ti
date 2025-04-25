@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="title">
+    <meta charset="UTF-8">
+    <title>Sistema de Chamados</title>
+    <link rel="stylesheet" th:href="@{/css/estilo.css}" />
+    <script th:src="@{/js/script.js}"></script>
+</head>
+<body>
+<header th:fragment="header">
+    <nav>
+        <a th:href="@{/}">Início</a>
+        <a th:href="@{/chamados}">Chamados</a>
+        <a th:href="@{/usuarios}">Usuários</a>
+        <a th:href="@{/configuracoes}">Configurações</a>
+        <a th:href="@{/logout}">Sair</a>
+        <button id="theme-toggle">🌓</button>
+    </nav>
+</header>
+
+<footer th:fragment="footer">
+    <p>&copy; 2025 - Sistema de Chamados</p>
+</footer>
+</body>
+</html>

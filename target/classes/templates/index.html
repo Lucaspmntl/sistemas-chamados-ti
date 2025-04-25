@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:replace="layout :: title">Início</title>
+    <link rel="stylesheet" th:href="@{/css/estilo.css}" />
+</head>
+<body>
+    <div th:replace="layout :: header"></div>
+    <main class="container">
+        <h1>Bem-vindo ao Sistema de Suporte de TI</h1>
+        <p>Escolha uma opção no menu para começar.</p>
+    </main>
+    <div th:replace="layout :: footer"></div>
+</body>
+</html>
