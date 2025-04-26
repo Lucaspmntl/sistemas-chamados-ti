@@ -6,20 +6,20 @@
 
 **📝 Descrição**
 
-Este é um sistema web robusto, desenvolvido para otimizar o gerenciamento de chamados técnicos em empresas que oferecem suporte especializado em **Software**, **Hardware** e **Rede**. A plataforma foi cuidadosamente projetada para atender às necessidades de diferentes perfis de usuários:
+Este é um sistema web sofisticado, desenvolvido para aprimorar o gerenciamento de chamados técnicos em empresas que oferecem suporte especializado em **Software**, **Hardware** e **Rede**. A plataforma foi meticulosamente projetada para atender às necessidades de diversos perfis de usuários:
 
-* **Usuário comum:** Capacidade de abrir novos chamados e acompanhar o progresso daqueles já existentes, mantendo-se informado sobre o status de suas solicitações.
-* **Técnico:** Ferramentas dedicadas para visualizar os chamados que lhes foram atribuídos, realizar atualizações de status em tempo real e marcar os chamados como concluídos, garantindo um fluxo de trabalho eficiente.
-* **Administrador:** Acesso irrestrito ao sistema, permitindo o gerenciamento completo de usuários, a supervisão de todos os chamados e a configuração de parâmetros do sistema.
+* **Usuário comum:** Capacidade de registrar novas solicitações de suporte e acompanhar o status em tempo real de seus chamados, mantendo-se sempre atualizado.
+* **Técnico:** Ferramentas especializadas para visualizar os chamados designados, atualizar o progresso e marcar os chamados como concluídos, otimizando o fluxo de trabalho.
+* **Administrador:** Acesso irrestrito a todas as funcionalidades do sistema, permitindo o gerenciamento completo de usuários, a supervisão abrangente dos chamados e a configuração de parâmetros do sistema.
 
 **Principais Operações:**
 
-* **Abertura de Chamados:** Usuários podem registrar suas demandas de suporte de forma intuitiva e detalhada.
-* **Atualização e Resolução:** Técnicos e administradores podem manter o histórico dos chamados atualizado e indicar sua resolução.
-* **Gestão de Categorias:** Organização eficiente dos chamados através de categorias personalizáveis, facilitando a triagem e o direcionamento adequado.
-* **Controle de Acesso:** Mecanismos de autenticação e autorização implementados para proteger as informações e garantir que cada usuário acesse apenas as funcionalidades permitidas.
+* **Abertura de Chamados Simplificada:** Usuários podem iniciar novos chamados de forma intuitiva, fornecendo detalhes cruciais sobre o problema.
+* **Atualização e Resolução Eficazes:** Técnicos e administradores podem registrar o histórico das ações tomadas e indicar a resolução dos chamados de maneira clara.
+* **Gestão de Categorias Inteligente:** Organização avançada dos chamados através de categorias personalizáveis, facilitando a triagem, o direcionamento e a geração de relatórios.
+* **Controle de Acesso Robusto:** Mecanismos de autenticação e autorização rigorosos implementados para proteger dados sensíveis e garantir que cada usuário acesse apenas as áreas permitidas.
 
-O **frontend** do sistema prima pela simplicidade e responsividade, construído com **Thymeleaf** para uma experiência de usuário agradável e intuitiva em diversos dispositivos.
+A interface de usuário (**frontend**) do sistema é caracterizada pela sua simplicidade e responsividade, construída com **Thymeleaf** para proporcionar uma experiência de uso fluida e adaptável a diferentes dispositivos.
 
 <br>
 
@@ -27,47 +27,47 @@ O **frontend** do sistema prima pela simplicidade e responsividade, construído 
 
 **🖥 Backend**
 
-* **Java 21**: A robustez e o desempenho da linguagem Java em sua versão mais recente.
-* **Spring Boot**: O poder do Spring Framework simplificado para desenvolvimento rápido e eficiente (incluindo **Spring Web**, **Spring Data JPA** para persistência de dados e **Spring Security** para segurança).
-* **Lombok**: Redução da verbosidade do código Java através de anotações inteligentes.
-* **Maven**: Gerenciamento de dependências e automação do processo de build.
+* **Java 21**: A potência e a confiabilidade da linguagem Java em sua versão mais recente.
+* **Spring Boot**: A agilidade e a conveniência do Spring Framework simplificadas para um desenvolvimento rápido e eficiente (incluindo **Spring Web** para aplicações web, **Spring Data JPA** para persistência de dados e **Spring Security** para segurança).
+* **Lombok**: A redução da redundância no código Java através de anotações inteligentes.
+* **Maven**: O gerenciamento inteligente de dependências e a automação do processo de construção do projeto.
 
 **🗄 Banco de Dados**
 
-* **MySQL**: Um sistema de gerenciamento de banco de dados relacional amplamente utilizado (tanto o **Server** para o armazenamento dos dados quanto o **Workbench** como ferramenta de administração).
+* **MySQL**: Um sistema de gerenciamento de banco de dados relacional de alto desempenho e amplamente utilizado (tanto o **Server** para o armazenamento persistente dos dados quanto o **Workbench** como uma ferramenta gráfica de administração).
 
 **🎨 Frontend**
 
-* **Thymeleaf**: Uma engine de templates Java Server-Side para a criação de interfaces dinâmicas.
-* **HTML**, **CSS**: As tecnologias fundamentais para a estrutura e o estilo da interface web.
+* **Thymeleaf**: Uma engine de templates Java Server-Side elegante e poderosa para a criação de interfaces web dinâmicas.
+* **HTML**, **CSS**: As tecnologias fundamentais para a estruturação e a estilização da interface de usuário.
 
 **🛠 Ferramentas e Dependências**
 
-* **Spring Boot DevTools**: Ferramentas para facilitar o desenvolvimento, como live reload e configurações padrão sensíveis.
-* **Validation (Bean Validation)**: Garantia da integridade dos dados através de mecanismos de validação.
-* **JUnit**, **Mockito**: Frameworks essenciais para a criação de testes unitários robustos e isolados.
+* **Spring Boot DevTools**: Um conjunto de ferramentas que facilitam o desenvolvimento, incluindo o reinício automático da aplicação e configurações padrão inteligentes.
+* **Validation (Bean Validation)**: A garantia da integridade dos dados através de um sistema robusto de validação.
+* **JUnit**, **Mockito**: Frameworks essenciais para a criação de testes unitários confiáveis e isolados, assegurando a qualidade do código.
 
 <br>
 
 **🎯 Principais Funcionalidades**
 
-* ✅ **Cadastro e login de usuários** com distintos níveis de acesso e permissões.
-* ✅ **Abertura intuitiva**, **visualização detalhada** e **acompanhamento transparente** dos chamados técnicos.
-* ✅ **Atualização dinâmica do status dos chamados**, permitindo o controle do fluxo de trabalho (em andamento, concluído, etc.).
-* ✅ **Organização eficaz dos chamados** através de um sistema de categorização flexível.
-* ✅ **Implementação robusta de controle de acesso** com autenticação e autorização gerenciadas pelo **Spring Security**.
-* ✅ **Mecanismos de registro e controle de erros**, com tratamento adequado de exceções para uma experiência de usuário estável.
-* ✅ **Criação automática da estrutura do banco de dados** através do **Hibernate**, simplificando a configuração inicial.
+* ✅ **Cadastro e login de usuários** com perfis distintos e controle de acesso granular.
+* ✅ **Abertura intuitiva**, **visualização detalhada** e **acompanhamento transparente** do ciclo de vida dos chamados técnicos.
+* ✅ **Atualização dinâmica do status dos chamados**, permitindo um acompanhamento preciso do progresso (em andamento, concluído, etc.).
+* ✅ **Organização flexível dos chamados** através de um sistema de categorização personalizável.
+* ✅ **Implementação segura de controle de acesso** com autenticação e autorização gerenciadas pelo **Spring Security**.
+* ✅ **Mecanismos abrangentes de registro e controle de erros**, com tratamento adequado de exceções para uma experiência de usuário consistente.
+* ✅ **Criação automática e eficiente da estrutura do banco de dados** através do **Hibernate**, simplificando a configuração inicial.
 
 <br>
 
 **📂 Estrutura do Projeto**
 
-O sistema adota a consagrada arquitetura **Model-View-Controller (MVC)**, promovendo a separação de responsabilidades e facilitando a manutenção e a escalabilidade. A persistência de dados é gerenciada através do **Mapeamento Objeto-Relacional (ORM)**.
+O sistema adota a arquitetura bem estabelecida **Model-View-Controller (MVC)**, promovendo uma clara separação de responsabilidades e facilitando a manutenção e a escalabilidade do projeto. A persistência dos dados é gerenciada de forma eficiente através do **Mapeamento Objeto-Relacional (ORM)**.
 
-* **Model**: Representação das entidades de negócio do sistema, como `Usuario`, `Chamado`, `Categoria`, etc., encapsulando os dados e comportamentos relacionados.
-* **Repository**: Interfaces que estendem o **Spring Data JPA**, fornecendo métodos para acesso e manipulação dos dados no banco de dados de forma abstrata e eficiente.
-* **Service**: Camada responsável pela implementação das regras de negócio específicas do sistema e pela realização de validações antes da persistência dos dados.
+* **Model**: Representação das entidades de domínio do sistema, como `Usuario`, `Chamado`, `Categoria`, etc., encapsulando os dados e as regras de negócio associadas.
+* **Repository**: Interfaces que estendem o **Spring Data JPA**, fornecendo métodos abstratos e poderosos para o acesso e a manipulação dos dados no banco de dados.
+* **Service**: Camada responsável pela implementação da lógica de negócio específica do sistema e pela aplicação de validações antes da persistência dos dados.
 * **Controller**: Componentes que atuam como intermediários entre a camada de apresentação (frontend com Thymeleaf) e a camada de serviço, recebendo as requisições do usuário e orquestrando as ações necessárias.
 
 <br>
@@ -76,11 +76,11 @@ O sistema adota a consagrada arquitetura **Model-View-Controller (MVC)**, promov
 
 **Requisitos:**
 
-* **JDK 21** devidamente instalado em seu ambiente de desenvolvimento.
-* **Maven** configurado e acessível através da linha de comando.
-* **MySQL Server** em execução para o armazenamento dos dados do sistema.
-* Um **cliente de banco de dados** como **MySQL Workbench** ou **WampServer** para a administração do MySQL.
-* Uma **IDE recomendada** para o desenvolvimento Java, como **IntelliJ IDEA** ou **Eclipse**.
+* **JDK 21** instalado e configurado corretamente em seu ambiente de desenvolvimento.
+* **Maven** instalado e acessível através da linha de comando do seu sistema operacional.
+* **MySQL Server** em execução para fornecer a infraestrutura de banco de dados para o sistema.
+* Um **cliente de banco de dados** como **MySQL Workbench** ou **DBeaver** para a administração e a inspeção do banco de dados MySQL.
+* Uma **IDE recomendada** para o desenvolvimento Java, como **IntelliJ IDEA**, **Eclipse** ou **Visual Studio Code com extensões Java**.
 
 **Passos para executar o projeto:**
 
@@ -89,36 +89,40 @@ O sistema adota a consagrada arquitetura **Model-View-Controller (MVC)**, promov
     git clone <link-do-repositorio>
     ```
 
-2.  **Certifique-se de que o MySQL Server esteja ativo e rodando** em sua máquina.
+2.  **Assegure-se de que o MySQL Server esteja em execução** e acessível em sua máquina.
 
-3.  **Crie o banco de dados manualmente** no MySQL:
+3.  **Crie o banco de dados manualmente** no MySQL utilizando um cliente como o MySQL Workbench:
     ```sql
     CREATE DATABASE sistema_chamados;
     ```
 
-4.  **Ajuste as configurações de conexão com o banco de dados** no arquivo `src/main/resources/application.properties`:
-    ```ini
+4.  **Configure as credenciais de acesso ao banco de dados** no arquivo `src/main/resources/application.properties`:
+    ```properties
     spring.datasource.username=seu_usuario
     spring.datasource.password=sua_senha
     ```
-    Certifique-se de inserir suas credenciais corretas do MySQL.
+    Substitua `seu_usuario` e `sua_senha` pelas suas credenciais do MySQL.
 
-5.  **Execute o projeto** diretamente na sua IDE (IntelliJ IDEA, Eclipse, etc.) ou através do terminal utilizando o Maven Wrapper:
+5.  **Importação de dados iniciais (opcional):**
+
+    Caso deseje inicializar o sistema com algumas categorias e chamados para facilitar os testes, execute os scripts SQL localizados em `src/main/scripts` no seu MySQL Workbench (ou outro cliente MySQL) após a criação do banco de dados:
+
+    * `categorias_iniciais.sql`: Cria categorias de chamados predefinidas.
+    * `chamados_iniciais.sql`: Insere alguns chamados fictícios já categorizados.
+
+6.  **Execute o projeto** diretamente através da sua IDE (IntelliJ IDEA, Eclipse, etc.) ou utilizando o Maven Wrapper no terminal:
     ```bash
     ./mvnw spring-boot:run
     ```
 
-6.  **Acesse o sistema no seu navegador web** através da seguinte URL:
-    ```arduino
+7.  **Acesse o sistema no seu navegador web** através do seguinte endereço:
+    ```
     http://localhost:8080/
     ```
 
-**🛠️ Observação Importante:** As tabelas necessárias para o funcionamento do sistema e seus respectivos relacionamentos serão **criadas automaticamente** pelo Hibernate durante a inicialização da aplicação.
+**❓ Observações Adicionais (atualizado)**
 
-<br>
-
-**❓ Observações Adicionais**
-
-* Ao compartilhar ou exportar este projeto para plataformas como o GitHub, qualquer desenvolvedor com **JDK 21**, **Maven** e um **MySQL Server ativo** poderá executar o sistema em seu próprio ambiente.
-* É crucial que o banco de dados `sistema_chamados` seja **criado manualmente** no MySQL **antes da primeira execução** do projeto.
-* O **Hibernate** se encarregará de criar todas as tabelas e os relacionamentos definidos nas entidades do sistema no banco de dados configurado.
+* Ao compartilhar ou exportar este projeto para plataformas como o GitHub, qualquer desenvolvedor com **JDK 21**, **Maven** e um **MySQL Server ativo** poderá executar o sistema em seu próprio ambiente de desenvolvimento.
+* É fundamental que o banco de dados `sistema_chamados` seja **criado manualmente** no MySQL **antes da primeira execução** da aplicação.
+* O **Hibernate** automatizará a criação de todas as tabelas e os relacionamentos necessários no banco de dados configurado, com base nas definições das entidades do sistema.
+* Para **popular o sistema com dados iniciais**, utilize os arquivos `categorias_iniciais.sql` e `chamados_iniciais.sql` localizados no diretório `src/main/scripts` após a criação do banco de dados (este passo é opcional).
