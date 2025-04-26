@@ -18,24 +18,31 @@ public class UsuarioController {
     @Autowired
     private UsuarioService usuarioService;
 
-    @GetMapping("/cadastro")
-    public String mostrarFormularioCadastro(Model model) {
-        model.addAttribute("usuario", new Usuario());
-        return "usuarios/cadastro";
-    }
-
     @Autowired
     private EmailService emailService;
 
+    @GetMapping("/cadastro")
+    public String mostrarFormularioCadastro(Model model) {
+        if (!model.containsAttribute("usuario")) {
+            model.addAttribute("usuario", new Usuario());
+        }
+        return "usuarios/cadastro";
+    }
+
     @PostMapping("/cadastrar")
-    public String cadastrarUsuario(@Valid @ModelAttribute Usuario usuario, BindingResult result, RedirectAttributes redirectAttributes) {
+    public String cadastrarUsuario(@Valid @ModelAttribute Usuario usuario, BindingResult result, Model model, RedirectAttributes redirectAttributes) {
         if (result.hasErrors()) {
-            return "usuarios/cadastro"; // volta para a página de cadastro se tiver erro
+            return "usuarios/cadastro";
+        }
+
+        if (usuarioService.emailJaExiste(usuario.getEmail())) {
+            model.addAttribute("erroEmail", true);
+            model.addAttribute("usuario", usuario);
+            return "usuarios/cadastro";
         }
 
         usuarioService.salvar(usuario);
 
-        // Enviar o email de boas-vindas
         emailService.enviarEmail(
                 usuario.getEmail(),
                 "Cadastro Realizado!",
@@ -52,4 +59,3 @@ public class UsuarioController {
         return "usuarios/lista";
     }
 }
-

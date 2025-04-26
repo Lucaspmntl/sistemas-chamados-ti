@@ -18,11 +18,6 @@ public class UsuarioService {
     private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
     public void salvar(Usuario usuario) {
-        Optional<Usuario> existente = usuarioRepository.findByEmail(usuario.getEmail());
-        if (existente.isPresent()) {
-            throw new RuntimeException("Email já está em uso!");
-        }
-
         String senhaCriptografada = passwordEncoder.encode(usuario.getSenha());
         usuario.setSenha(senhaCriptografada);
         usuarioRepository.save(usuario);
@@ -38,5 +33,9 @@ public class UsuarioService {
 
     public Optional<Usuario> buscarPorEmail(String email) {
         return usuarioRepository.findByEmail(email);
+    }
+
+    public boolean emailJaExiste(String email) {
+        return usuarioRepository.findByEmail(email).isPresent();
     }
 }
