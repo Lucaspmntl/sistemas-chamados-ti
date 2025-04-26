@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Cadastro de Usuário</title>
+    <link rel="stylesheet" th:href="@{/css/estilo.css}">
+</head>
+<body>
+<div class="container-centralizado">
+    <div class="form-card">
+        <h2>Cadastro de Usuário</h2>
+
+        <form th:action="@{/usuarios/cadastrar}" th:object="${usuario}" method="post" onsubmit="return validarSenha()">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" th:field="*{nome}" required />
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" th:field="*{email}" required />
+
+            <label for="perfil">Perfil:</label>
+            <select id="perfil" th:field="*{perfil}">
+                <option th:value="CLIENTE">Cliente</option>
+                <option th:value="ADMIN">Administrador</option>
+                <option th:value="TECNICO">Técnico</option>
+            </select>
+
+            <input type="password" id="senha" name="senha" minlength="6" required>
+            <small style="color: red; display: none;" id="mensagem-senha">A senha precisa ter no mínimo 6 caracteres.</small>
+
+            <button type="submit">Cadastrar</button>
+        </form>
+
+        <p>Já tem uma conta? <a th:href="@{/login}">Faça login</a></p>
+    </div>
+</div>
+
+<script>
+    const senhaInput = document.getElementById("senha");
+    const mensagem = document.getElementById("mensagem-senha");
+
+    senhaInput.addEventListener("input", () => {
+        if (senhaInput.value.length > 0 && senhaInput.value.length < 6) {
+            mensagem.style.display = "block";
+        } else {
+            mensagem.style.display = "none";
+        }
+    });
+</script>
+</body>
+
+</html>
