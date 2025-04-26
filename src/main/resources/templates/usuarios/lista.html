@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Usuários</title>
+    <link rel="stylesheet" th:href="@{/css/estilo.css}">
+</head>
+<body>
+<div th:replace="layout :: header"></div>
+
+<main class="container" style="padding: 0 3rem;">
+    <h1 style="margin-bottom: 1rem;">Usuários Cadastrados</h1>
+
+    <table style="width: 100%; border-collapse: collapse;">
+        <thead>
+        <tr style="background-color: var(--primary-color); color: white;">
+            <th style="padding: 12px;">ID</th>
+            <th style="padding: 12px;">Nome</th>
+            <th style="padding: 12px;">Email</th>
+            <th style="padding: 12px;">Perfil</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="usuario, stat : ${usuarios}"
+            th:style="${stat.even} ? 'background-color: #f4f4f4;' : 'background-color: #ffffff;'">
+            <td style="padding: 10px;" th:text="${usuario.id}">1</td>
+            <td style="padding: 10px;" th:text="${usuario.nome}">Fulano</td>
+            <td style="padding: 10px;" th:text="${usuario.email}">fulano@email.com</td>
+            <td style="padding: 10px;" th:text="${usuario.perfil}">ADMIN</td>
+        </tr>
+        </tbody>
+    </table>
+</main>
+
+<div th:replace="layout :: footer"></div>
+</body>
+</html>

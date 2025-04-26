@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Erro</title>
+    <link rel="stylesheet" th:href="@{/css/estilo.css}" />
+</head>
+<body>
+<div th:replace="layout :: header"></div>
+<main class="container">
+    <h1>Algo deu errado...</h1>
+    <p>Desculpe, não conseguimos processar sua solicitação.</p>
+    <a th:href="@{/}">Voltar à página inicial</a>
+</main>
+<div th:replace="layout :: footer"></div>
+</body>
+</html>

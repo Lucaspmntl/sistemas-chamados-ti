@@ -11,6 +11,118 @@
     --button-text: #ffffff;
 }
 
+.login-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+#theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--button-text);
+}
+
+.container-centralizado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.chamado-destacado-temporario {
+    animation: destaqueFade 1s ease-in-out;
+    transition: background-color 1s ease, border-left 1s ease;
+}
+
+.chamado-destacado-sumir {
+    background-color: transparent !important;
+    border-left: none !important;
+}
+
+.btn {
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  text-align: center;
+  min-width: 80px;
+  box-sizing: border-box;
+}
+
+.btn-ver {
+  background-color: #2196F3;
+  color: white;
+}
+
+.btn-editar {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.btn-excluir {
+  background-color: #F44336;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.acoes-btns {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+
+
+.icon-button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.4rem;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  text-align: center;
+}
+
+.icon-button:hover {
+  background-color: #eee;
+}
+
+.chamado-destacado {
+    border-left: 5px solid #4CAF50 !important;
+    background-color: #eaffea !important;
+}
+
+@keyframes destaqueFade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.chamado-destacado td:first-child::before {
+    content: "🆕";
+    margin-right: 5px;
+}
+
+form {
+    width: 100%;
+}
+
 [data-theme='dark'] {
     --primary-color: #6699ff;
     --background-color: #1e1e1e;
@@ -28,20 +140,119 @@ body {
     padding: 0;
 }
 
-header nav {
+.form-card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.form-card h2 {
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+.form-card label {
+    display: block;
+    margin: 1rem 0 0.5rem;
+    text-align: left;
+    font-weight: bold;
+}
+
+.form-card input,
+.form-card select {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.form-card button {
+    width: 100%;
+    padding: 0.8rem;
     background-color: var(--primary-color);
-    padding: 1rem;
-    display: flex;
-    gap: 1rem;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-card button:hover {
+    background-color: #135ba1;
+}
+
+.form-card p {
+    margin-top: 1.5rem;
+}
+
+.mensagem-sucesso, .mensagem-erro {
+    padding: 0.75rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.mensagem-sucesso {
+    background-color: #e6ffed;
+    color: #2e7d32;
+}
+
+.mensagem-erro {
+    background-color: #ffe6e6;
+    color: #c62828;
+}
+
+header nav span {
+    color: var(--button-text);
+    font-weight: bold;
 }
 
 header nav a {
     color: var(--button-text);
     text-decoration: none;
+    font-weight: 500;
 }
 
 .container {
     padding: 2rem;
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.styled-table th {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+.styled-table td {
+    padding: 10px;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #135ba1;
 }
 
 button, input, select, textarea {

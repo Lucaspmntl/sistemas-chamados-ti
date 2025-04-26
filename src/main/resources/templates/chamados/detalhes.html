@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:replace="~{layout :: header}">Detalhes do Chamado</title>
+    <link rel="stylesheet" th:href="@{/css/estilo.css}" />
+</head>
+<body>
+
+<main class="container" style="padding: 2rem 3rem;">
+    <h1 style="margin-bottom: 1rem;">Detalhes do Chamado</h1>
+
+    <div style="background-color: #fdfdfd; padding: 2rem; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); max-width: 700px;">
+        <p><strong>ID:</strong> <span th:text="${chamado.id}">N/A</span></p>
+
+        <p><strong>Título:</strong>
+            <span th:if="${chamado.titulo != null}" th:text="${chamado.titulo}">Título</span>
+            <span th:if="${chamado.titulo == null}">Não informado</span>
+        </p>
+
+        <p><strong>Descrição:</strong></p>
+        <p style="margin-left: 1rem; white-space: pre-line;">
+            <span th:if="${chamado.descricao != null}" th:text="${chamado.descricao}">Descrição</span>
+            <span th:if="${chamado.descricao == null}">Não informada</span>
+        </p>
+
+        <p><strong>Status:</strong>
+            <span th:if="${chamado.status != null}" th:text="${chamado.status}">Status</span>
+            <span th:if="${chamado.status == null}">Não informado</span>
+        </p>
+
+        <p><strong>Categoria:</strong>
+            <span th:if="${chamado.categoria != null}" th:text="${chamado.categoria.nome}">Categoria</span>
+            <span th:if="${chamado.categoria == null}">Não informada</span>
+        </p>
+
+        <p><strong>Aberto em:</strong>
+            <span th:if="${dataAberturaFormatada != null}" th:text="${dataAberturaFormatada}">Data Abertura</span>
+            <span th:if="${dataAberturaFormatada == null}">Não informado</span>
+        </p>
+
+        <p><strong>Aberto por:</strong>
+            <span th:if="${chamado.usuario != null}" th:text="${chamado.usuario.nome}">Usuário</span>
+            <span th:if="${chamado.usuario == null}">Não informado</span>
+        </p>
+
+        <p><strong>Fechado em:</strong>
+            <span th:if="${dataFechamentoFormatada != null}" th:text="${dataFechamentoFormatada}">Data Fechamento</span>
+            <span th:if="${dataFechamentoFormatada == null}">Não informado</span>
+        </p>
+
+        <p><strong>Usuário:</strong>
+            <span th:if="${chamado.usuario != null}" th:text="${chamado.usuario.nome}">Usuário</span>
+            <span th:if="${chamado.usuario == null}">Não informado</span>
+        </p>
+
+        <p><strong>Técnico:</strong>
+            <span th:if="${chamado.tecnico != null}" th:text="${chamado.tecnico.nome}">Técnico</span>
+            <span th:if="${chamado.tecnico == null}">Não atribuído</span>
+        </p>
+
+        <div style="margin-top: 2rem; display: flex; gap: 1rem;">
+            <a th:href="@{/chamados}"
+               style="padding: 0.5rem 1.2rem; background-color: var(--primary-color); color: white; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block;">
+                Voltar
+            </a>
+
+            <a th:href="@{|/chamados/${chamado.id}/editar|}"
+               style="padding: 0.5rem 1.2rem; background-color: #4CAF50; color: white; border: none; border-radius: 8px; cursor: pointer; text-decoration: none; font-weight: bold; display: inline-block;">
+                Editar
+            </a>
+
+            <form th:action="@{|/chamados/${chamado.id}/excluir|}" method="post"
+                  th:if="${chamado.status == T(com.seuprojeto.chamado.model.Status).CONCLUIDO}"
+                  onsubmit="return confirm('Tem certeza que deseja excluir este chamado?');">
+                <button type="submit"
+                        style="padding: 0.5rem 1.2rem; background-color: #F44336; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">
+                    Excluir
+                </button>
+            </form>
+        </div>
+    </div>
+</main>
+
+<div th:replace="layout :: footer"></div>
+
+</body>
+</html>
