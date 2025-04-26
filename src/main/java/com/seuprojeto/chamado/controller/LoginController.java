@@ -8,7 +8,7 @@ public class LoginController {
 
     @GetMapping("/login")
     public String mostrarLogin() {
-        return "login";
+        return "login/login"; // nome do HTML
     }
 
     @GetMapping("/")

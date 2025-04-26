@@ -7,7 +7,8 @@ import java.time.LocalDateTime;
 public class Chamado {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "chamado_seq")
+    @SequenceGenerator(name = "chamado_seq", sequenceName = "chamado_sequence", allocationSize = 1)
     private Long id;
 
     private String titulo;
@@ -32,6 +33,7 @@ public class Chamado {
     @ManyToOne
     @JoinColumn(name = "categoria_id")
     private Categoria categoria;
+
 
     // Getters e Setters
     public Long getId() {

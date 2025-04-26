@@ -4,6 +4,7 @@ package com.seuprojeto.chamado.service;
 import com.seuprojeto.chamado.model.Chamado;
 import com.seuprojeto.chamado.repository.ChamadoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,7 +17,11 @@ public class ChamadoService {
     private ChamadoRepository chamadoRepository;
 
     public List<Chamado> listarTodos() {
-        return chamadoRepository.findAll();
+        return chamadoRepository.findAll(Sort.by(Sort.Direction.DESC, "id"));
+    }
+
+    public Optional<Chamado> buscarUltimoChamado() {
+        return chamadoRepository.findTopByOrderByDataAberturaDesc();
     }
 
     public Optional<Chamado> buscarPorId(Long id) {

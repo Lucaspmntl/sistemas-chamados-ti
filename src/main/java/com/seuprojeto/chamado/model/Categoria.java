@@ -15,5 +15,23 @@ public class Categoria {
     @OneToMany(mappedBy = "categoria")
     private List<Chamado> chamados;
 
-    // Getters e Setters abaixo, caso precise
+    public Categoria() {
+    }
+
+    public Categoria(String nome) {
+        this.nome = nome;
+    }
+
+    // Getters e Setters
+    public Long getId() {
+        return id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 }
